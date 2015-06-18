@@ -7,8 +7,8 @@ class CreateProspects < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-  end
 
-  add_index :prospects, :email
-  add_index :prospects, :list_name
+    add_index :prospects, :email
+    add_index :prospects, :list_name
+  end
 end
