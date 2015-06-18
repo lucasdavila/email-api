@@ -42,6 +42,10 @@ This is a simple API to store prospects informations and send content via email.
 
 ## Production
 
+### create your custom deploy config
+`$ cp config/deploy/production.sample.conf config/deploy/production.conf`  
+`$ cp config/deploy/staging.sample.conf config/deploy/staging.conf`  
+
 ### create your custom apache virtual host
 `$ cp config/apache.sample.conf config/apache.conf`
 
