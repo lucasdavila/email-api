@@ -3,7 +3,7 @@ This is a simple API to store prospects informations and send content via email.
 # Features:
 
 * It stores the prospect email.
-* It stores any additional data in a JSON.
+* It stores any additional data.
 * It can categorize prospects by a list name.
 * It sends automated email to the prospect.
 
@@ -11,7 +11,7 @@ This is a simple API to store prospects informations and send content via email.
 
 * **POST /prospects**  
   required params: email, list_name  
-  optional params: data (JSON)  
+  optional params: data (postgres hstore)  
 
 ## First steps
 
