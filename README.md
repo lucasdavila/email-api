@@ -13,15 +13,26 @@ This is a simple API to store prospects informations and send content via email.
   required params: email, list_name  
   optional params: data (JSON)  
 
+## First steps
+
+### create your custom configs
+`$ cp config/mail.sample.yml config/mail.yml`  
+`$ cp config/database.sample.yml config/database.yml`
+
+## Test
+
+### setup the database
+`$ rake RACK_ENV=test db:create`  
+`$ rake RACK_ENV=test db:migrate`
+
+### run the tests
+`$ rspec`
+
 ## Development
 
-### config the database
-`$ cp config/database.sample.yml config/database.yml`
+### setup the database
 `$ rake db:create`  
 `$ rake db:migrate`
-
-### config the mail
-`$ cp config/mail.sample.yml config/mail.yml`
 
 ### run the console
 `$ rake console`
@@ -29,16 +40,23 @@ This is a simple API to store prospects informations and send content via email.
 ### run the app with
 `$ rackup`
 
-## test
+## Production
 
-### config the database
-`$ rake RACK_ENV=test db:create`  
-`$ rake RACK_ENV=test db:migrate`
+### create your custom apache virtual host
+`$ cp config/apache.sample.conf config/apache.conf`
 
-### run the tests
-`$ rspec`
+### upload your custom virtual host
+`$ cap production upload:vhost`
 
+### upload your custom configs
+`$ cap production upload:db_config`  
+`$ cap production upload:mail_config`
 
-# TODO
+### deploy it
+`$ cap production deploy`
 
-* Move mail config to the database?
+### setup the database
+`$ cap production db:create`  
+`$ cap production db:migrate`  
+
+Yay, your API is online :D
