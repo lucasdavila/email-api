@@ -2,3 +2,4 @@
 .ruby-version
 config/database.yml
 config/mail.yml
+config/apache.conf
