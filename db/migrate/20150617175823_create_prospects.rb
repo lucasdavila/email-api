@@ -1,9 +1,11 @@
 class CreateProspects < ActiveRecord::Migration
   def change
+    enable_extension 'hstore' unless extension_enabled?('hstore')
+
     create_table :prospects do |t|
       t.string :email
       t.string :list_name
-      t.json :data
+      t.hstore :data
 
       t.timestamps null: false
     end
