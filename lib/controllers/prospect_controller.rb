@@ -28,7 +28,7 @@ class ProspectController < ResourceController
   def send_email
     mail = Mail.new
     mail.to = params[:email]
-    mail.from = ENV['mail_from']
+    mail.from = ENV['mail_from_name'] ? "#{ENV['mail_from_name']} <#{ENV['mail_from']}>" : ENV['mail_from']
     mail.subject = template['subject']
     mail.content_type 'text/html; charset=UTF-8'
     mail.body = email_body
