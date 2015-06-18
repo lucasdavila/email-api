@@ -1,3 +1,3 @@
 class Prospect < ActiveRecord::Base
-  validates :email, presence: true
+  validates :email, :list_name, presence: true
 end

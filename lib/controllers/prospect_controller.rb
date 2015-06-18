@@ -6,6 +6,8 @@ class ProspectController < ResourceController
   protected
 
   def before_post
+    return if params[:list_name].blank?
+
     unless template_exists?
       halt 400, { errors: { list_name: [ 'there is no template for this list' ] } }.to_json
     end
