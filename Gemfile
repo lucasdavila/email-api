@@ -12,6 +12,8 @@ gem 'sinatra-activerecord'
 
 gem 'active_model_serializers'
 
+gem 'mail'
+
 group :test do
   gem 'rspec'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'

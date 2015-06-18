@@ -1,0 +1,5 @@
+subject: Here is your content
+body: >
+  Hello <%= params[:email] %>.
+
+  To download the context click here.

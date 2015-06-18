@@ -57,7 +57,10 @@ class ResourceController < BaseController
   def post_resource
     @resource = resource_class.new params
 
+    before_post
+
     if @resource.save
+      after_post
       status 201
       resource_to_json
     else
@@ -81,6 +84,14 @@ class ResourceController < BaseController
 
   def delete_resourse
     resource.destroy
+  end
+
+  # callbacks
+
+  def before_post
+  end
+
+  def after_post
   end
 
   # resource

@@ -1,0 +1,7 @@
+subject: Put there the email subject
+body: >
+  Put here the email body.
+
+  You can access the request params with <%= params[:email] %>.
+
+  This string will be rendered as an ERB template.
