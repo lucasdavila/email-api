@@ -30,6 +30,7 @@ class ProspectController < ResourceController
     mail.to = params[:email]
     mail.from = ENV['mail_from']
     mail.subject = template['subject']
+    mail.content_type 'text/html; charset=UTF-8'
     mail.body = email_body
 
     mail.deliver!
