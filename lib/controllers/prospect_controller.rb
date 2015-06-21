@@ -29,7 +29,7 @@ class ProspectController < ResourceController
     mail = Mail.new
     mail.to = params[:email]
     mail.from = ENV['mail_from_name'] ? "#{ENV['mail_from_name']} <#{ENV['mail_from']}>" : ENV['mail_from']
-    mail.subject = template['subject']
+    mail.subject = email_subject
     mail.content_type 'text/html; charset=UTF-8'
     mail.body = email_body
 
@@ -38,6 +38,12 @@ class ProspectController < ResourceController
 
   def template
     @template ||= YAML.load_file template_path
+  end
+
+  def email_subject
+    @params = params
+
+    ERB.new(template['subject']).result binding
   end
 
   def email_body
