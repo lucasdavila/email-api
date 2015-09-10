@@ -5,3 +5,4 @@ Dir['./lib/models/*.rb'].each { |file| require file }
 require './lib/controllers'
 
 map('/prospects') { run ProspectController }
+map('/subscribers') { run SubscriberController }
