@@ -28,7 +28,7 @@ RSpec.describe SubscriberController, :type => :request do
 
     context 'when there is a validation error' do
       let(:params) { { email: nil, list_name: 'foo' } }
-      let(:expected_errors) { { 'email' => ["can't be blank"] } }
+      let(:expected_errors) { { 'email' => ["can't be blank", "is invalid"] } }
 
       it 'returns the errors messages' do
         post '/', params
