@@ -1,5 +1,5 @@
-RSpec.describe ProspectController, :type => :request do
-  let(:model_name) { :prospect }
+RSpec.describe ContactController, :type => :request do
+  let(:model_name) { :contact }
 
   describe 'post request' do
     before do
@@ -45,7 +45,7 @@ RSpec.describe ProspectController, :type => :request do
 
       let(:from) { 'test@foo.com' }
 
-      it 'sends an email to the prospect' do
+      it 'sends an email to the contact' do
         post '/', params
 
         is_expected.to have_sent_email.to params[:email]

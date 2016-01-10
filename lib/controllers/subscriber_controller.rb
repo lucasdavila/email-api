@@ -12,6 +12,6 @@ class SubscriberController < ResourceController
   end
 
   def resource_class_name
-    'Prospect'
+    'Contact'
   end
 end

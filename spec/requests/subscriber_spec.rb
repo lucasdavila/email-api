@@ -1,5 +1,5 @@
 RSpec.describe SubscriberController, :type => :request do
-  let(:model_name) { :prospect }
+  let(:model_name) { :contact }
 
   describe 'post request' do
     before do

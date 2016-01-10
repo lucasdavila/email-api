@@ -1,4 +1,4 @@
-class ProspectController < ResourceController
+class ContactController < ResourceController
   post '/' do
     post_resource
   end

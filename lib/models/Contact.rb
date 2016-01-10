@@ -1,4 +1,4 @@
-class Prospect < ActiveRecord::Base
+class Contact < ActiveRecord::Base
   validates :email, :list_name, presence: true
 
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: [:create, :update]

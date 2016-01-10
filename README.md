@@ -1,15 +1,17 @@
-This is a simple API to store prospects informations and send content via email.
+This is a simple API to store contacts informations and send automated emails.  
+
+You can use this API to store leads or prospects informations and send content via email,  
+for example you can have a landing page allowing a lead to receive an ebook on his email.  
 
 # Features:
 
-* It stores the prospect email.
-* It stores any additional data.
-* It can categorize prospects by a list name.
-* It sends automated email to the prospect.
+* It stores the contact email and additional data.
+* It organizes contacts by list name.
+* It can send an automated email to the contact.
 
 ## API
 
-* **POST /prospects**  
+* **POST /contact**  
   required params: email, list_name  
   optional params: data (postgres hstore)  
 
