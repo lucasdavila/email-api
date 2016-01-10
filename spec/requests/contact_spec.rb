@@ -14,7 +14,7 @@ RSpec.describe ContactController, :type => :request do
     let(:to_fixture_path) { "lib/templates/#{params[:list_name]}.yml" }
     let(:params) { { email: 'foo@bar.com', list_name: 'foo-content-download' } }
 
-    it 'creates the model_instance' do
+    it 'stores the contact' do
       expect { post '/', params }.to change(model_class, :count).by(1)
 
       expect(last_response.status).to eq 201
@@ -66,13 +66,11 @@ RSpec.describe ContactController, :type => :request do
           FileUtils.copy from_fixture_path, to_fixture_path
         end
 
-        let(:expected_errors) { { 'list_name' => ['there is no template for this list'] } }
-
-        it 'returns an error' do
+        it 'not send an email to the contact' do
           post '/', params
 
-          expect(last_response.status).to eq 400
-          expect(response_data['errors']).to include expected_errors
+          expect(last_response.status).to eq 201
+          is_expected.to_not have_sent_email.to params[:email]
         end
       end
     end
